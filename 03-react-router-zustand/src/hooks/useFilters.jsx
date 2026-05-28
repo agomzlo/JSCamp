@@ -38,10 +38,10 @@ export function useFilters(){
 
         const queryString = params.toString() ? `?${params.toString()}` : '';
 
-        const response = await fetch(`https://jscamp-api.vercel.app/api/jobs${queryString}`);
+        const response = await fetch(`http://localhost:1234/jobs${queryString}`);
         const json = await response.json();
 
-        setJobs(json.data);
+        setJobs(json.jobs);
         setTotalJobs(json.total);
       } catch (error) {
         console.error('Error fetching jobs:', error);

@@ -41,15 +41,15 @@ export function JobListingCard({ job }) {
   const jobDetailHref = `/job/${job.id}`
 
   return (
-    <article className="p-8 shadow-shadow flex bg-none shadow-none rounded-none border-b border-solid border-[#ffffff4d] m-0 items-start gap-4" data-modality={job.data.modalidad} data-level={job.data.nivel} data-technology={job.data.technology}>
+    <article className="p-8 shadow-shadow flex bg-none shadow-none rounded-none border-b border-solid border-[#ffffff4d] m-0 items-start gap-4" data-modality={job.data.modality} data-level={job.data.level} data-technology={job.data.technology}>
       <div>
         <h3>
           <Link to={jobDetailHref}>
-            {job.titulo}
+            {job.title}
           </Link>
         </h3>
-        <small className="text-sm opacity-75">{job.empresa} | {job.ubicacion}</small>
-        <p className="mt-2 text-text-muted">{job.descripcion}</p>
+        <small className="text-sm opacity-75">{job.company} | {job.location}</small>
+        <p className="mt-2 text-text-muted">{job.description}</p>
       </div>
       <div className="flex flex-col gap-4 items-center">
         <Link className="hover:underline" to={jobDetailHref}>Ver Detalles</Link>

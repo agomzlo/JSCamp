@@ -79,7 +79,7 @@ export default function JobInfoPage(){
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        fetch(`https://jscamp-api.vercel.app/api/jobs/${jobId}`)
+        fetch(`http://localhost:1234/jobs/${jobId}`)
         .then(response => {
             if(response.ok) return response.json();
             throw new Error(`Job with id: ${jobId} not found`);
@@ -111,16 +111,16 @@ export default function JobInfoPage(){
                         Empleos
                     </Link>
                     <span className="mx-0 my-2">/</span>
-                    <span className="text-text-primary">{job.titulo}</span>
+                    <span className="text-text-primary">{job.title}</span>
                 </nav>
              </div>
 
              <header className="mb-8 flex flex-row flex-wrap justify-between items-center">
                 <h1 className="text-4xl font-bold text-text-primary mb-4 text-balance flex items-center gap-2">
-                    {job.titulo}
+                    {job.title}
                 </h1>
                 <p className="text-base text-text-secondary text-balance mb-8">
-                    {job.empresa} - {job.ubicacion}
+                    {job.company} - {job.location}
                 </p>
              </header>
              <span className="flex flex-row gap-4 ">
